@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BookController::class, 'index']);
 Route::get('/search', SearchController::class);
 Route::get('/genres/{genre:name}', GenreController::class);
+//
 
 Route::middleware('guest')->group(function () {
 
