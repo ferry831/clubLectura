@@ -10,5 +10,15 @@ class Genre extends Model
     /** @use HasFactory<\Database\Factories\GenreFactory> */
     use HasFactory;
 
-    protected $fillable = ['name'];
+    public function books()
+    {
+        return $this->belongsToMany(Book::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
+
 }

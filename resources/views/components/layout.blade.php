@@ -19,7 +19,7 @@
 
 
     <div class="px-10 text-white font-hanken">
-        <nav class="flex justify-between items-center bg-black-ferran border-b border-white/15">
+        <nav class="grid grid-cols-3 justify-between items-center bg-black-ferran border-b border-white/15">
 
             <div>
                 <a href="">
@@ -28,7 +28,7 @@
                 </a>
             </div>
 
-            <div class="flex justify-between ">
+            <div class="flex justify-center items-center">
                 <div>
                     <a href=""
                         class="px-5 py-3 transition duration-300 rounded hover:bg-white/80 hover:px-5 hover:py-3 hover:text-black">Autores</a>
@@ -43,11 +43,28 @@
                 </div>
             </div>
 
+            @auth
 
-            <div class="inline-flex items-center gap-x-2">
-                <span class="w-2 h-2 bg-blue-600 inline-block"></span>
-                <a href="">Publica tu libro</a>
-            </div>
+                <div class="justify-self-end inline-flex items-center gap-x-2">
+                    <span class="w-2 h-2 bg-blue-600 inline-block"></span>
+                    <a href="">Publica tu libro</a>
+                </div>
+            @endauth
+
+            @guest()
+                <div class="justify-self-end inline-flex items-center">
+
+                    <div>
+                        <a href="/login"
+                            class="px-5 py-3 transition duration-300 rounded hover:bg-white/80 hover:px-5 hover:py-3 hover:text-black">Inicia
+                            Sesión</a>
+                    </div>
+                    <div>
+                        <a href="/register"
+                            class="px-5 py-3 transition duration-300 rounded hover:bg-white/80 hover:px-5 hover:py-3 hover:text-black">Regístrate</a>
+                    </div>
+                </div>
+            @endguest
 
 
 

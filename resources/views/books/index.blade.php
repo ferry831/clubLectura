@@ -6,12 +6,13 @@
 
         <section class="text-center">
             <x-page-heading>Busca tu libro:</x-page-heading>
-            <form action="" class="mt-4">
+            <x-forms.form action="/search" class="mt-4">
+                <x-forms.input type="text" name="q" placeholder="Miguel de Cervantes..."
+                    :label="false"></x-forms.input>
 
-                <input type="text" placeholder="El Quijote..."
-                    class="bg-white/5 border border-white/15 rounded-xl px-5 py-2 w-full max-w-2xl focus:border-orange-600 transition-colors duration-300  focus:outline-none">
 
-            </form>
+
+            </x-forms.form>
 
 
         </section>
